@@ -21,6 +21,7 @@ namespace settleMetal
        public static string location { get; set; }
        public static string address { get; set; }
        public static User user { get; set; }
+       public static string addtional_info { get; set; }
        
     }
   

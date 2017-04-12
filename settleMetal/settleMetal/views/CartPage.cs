@@ -13,6 +13,7 @@ namespace settleMetal
     {
         public CartPage()
         {
+            Title = "Invoice";
             StackLayout mainStack = new StackLayout {
                 HorizontalOptions = LayoutOptions.StartAndExpand,
                 Orientation = StackOrientation.Vertical,

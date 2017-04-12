@@ -15,6 +15,7 @@ namespace settleMetal
         Label total = new Label() { HorizontalTextAlignment=TextAlignment.End, VerticalTextAlignment=TextAlignment.Center};
         List<long> price = new List<long>();
         List<Price_Service> selectedservice = new List<Price_Service>();
+        Editor add_info;
         public Prices_Services()
         {
             Title = "Services";
@@ -161,7 +162,9 @@ namespace settleMetal
                 }
             }
             stk.Children.Add(grd);
-            
+            stk.Children.Add(new Label { Text = "Additional information", TextColor = Color.FromHex("#ff5230") });
+            add_info = new Editor() { HeightRequest = 100, BackgroundColor = Color.White };
+            stk.Children.Add(add_info);
             var scrl = new ScrollView();
             scrl.Content = stk;
 
@@ -192,6 +195,8 @@ namespace settleMetal
         private void Next_Clicked(object sender, EventArgs e)
         {
             SelectedService.choosService = selectedservice;
+            if(!String.IsNullOrEmpty(add_info.Text))
+                ShareInfo.addtional_info = add_info.Text;
             Navigation.PushAsync(new AskAddressPage());
         }
 

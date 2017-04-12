@@ -13,8 +13,8 @@ namespace settleMetal
         public Main()
         {
             InitializeComponent();
-            //Detail = new NavigationPage(new Home());
-            //IsPresented = false;
+            Detail = new NavigationPage(new Home());
+            IsPresented = false;
             getUser();
         }
         public async void getUser()
@@ -36,7 +36,7 @@ namespace settleMetal
             }
             catch(Exception ex)
             {
-
+               
             }
         }
         void registerUser(object sender, System.EventArgs e)
